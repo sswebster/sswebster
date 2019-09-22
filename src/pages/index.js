@@ -6,9 +6,11 @@ import Hero from '../components/hero'
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
 
+
 class RootIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
+    const projects = get(this, 'props.data.allContentfulProject.edges')
     const posts = get(this, 'props.data.allContentfulBlogPost.edges')
     const [author] = get(this, 'props.data.allContentfulPerson.edges')
 
@@ -19,6 +21,15 @@ class RootIndex extends React.Component {
           <Hero data={author.node} />
           <div className="wrapper">
             <h2 className="section-headline">Recent articles</h2>
+            <ul className="article-list">
+              {projects.map(({ node }) => {
+                return (
+                  <li key={node.slug}>
+                    <h2>{node.slug}</h2>
+                  </li>
+                )
+              })}
+            </ul>
             <ul className="article-list">
               {posts.map(({ node }) => {
                 return (
@@ -73,17 +84,25 @@ export const pageQuery = graphql`
           }
           title
           heroImage: image {
-            fluid(
-              maxWidth: 1180
-              maxHeight: 480
-              resizingBehavior: PAD
-              background: "rgb:000000"
+            fixed(
+              width: 300
+              height: 300
+              
             ) {
-              ...GatsbyContentfulFluid_tracedSVG
+              ...GatsbyContentfulFixed_tracedSVG
             }
           }
         }
       }
     }
+    allContentfulProject {
+      edges {
+        node {
+          projectName
+          slug
+        }
+      }
+    }
   }
+  
 `
