@@ -18,9 +18,9 @@ if (!spaceId || !accessToken) {
 
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Contentful starter',
+    title: 'Sam Webster Personal Website',
   },
-  pathPrefix: '/gatsby-contentful-starter',
+  pathPrefix: '/sswebster',
   plugins: [
     'gatsby-transformer-remark',
     'gatsby-transformer-sharp',
