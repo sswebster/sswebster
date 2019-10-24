@@ -4,6 +4,7 @@
   color: #000;
   max-width: 800px;
   margin: 0 auto;
+  padding: 60px 0;
 }
 
 .heroImage {
@@ -12,8 +13,10 @@
     the viewport width
   */
   height: 61.8vh;
-  max-height: 400px;
-  border-radius: 200px;
+  max-height: 250px;
+  border-radius: 125px;
+  margin: 0 28px;
+  max-width: 250px;
 }
 
 .heroDetails {

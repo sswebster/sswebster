@@ -63,6 +63,10 @@ public
 # gatsby cache folder
 .cache
 
+# Contentful Bin
+bin/hello.js
+bin/setup.js
+
 # secrets
 .contentful.json
 .env*

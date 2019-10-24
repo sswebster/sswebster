@@ -12,7 +12,6 @@ class Resume extends React.Component {
     return (
       <Layout location={this.props.location} >
         <div style={{ background: '#fff' }}>
-          <Helmet title={siteTitle} />
           <div className={styles.hero}>
             Resume
           </div>
