@@ -22,13 +22,13 @@ class RootIndex extends React.Component {
           <div className="wrapper">
             <h2 className="section-headline">Recent work</h2>
             <ul className="article-list">
-              {projects.map(({ node }) => {
+                {projects.map(({ node }) => {
                 return (
-                  <li key={node.slug}>
-                    <h2>{node.slug}</h2>
-                  </li>
+                    <li key={node.slug}>
+                    <h2><a href={`/projects/${node.slug}`}>{node.slug}</a></h2>
+                    </li>
                 )
-              })}
+                })}
             </ul>
           </div>
         </div>
@@ -70,10 +70,11 @@ export const pageQuery = graphql`
     }
     allContentfulProject {
       edges {
-        node {
-          projectName
-          slug
-        }
+          node {
+              projectName
+              slug
+            
+          }
       }
     }
   }

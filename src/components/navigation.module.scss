@@ -16,11 +16,11 @@
 }
 
 .navigationItem a {
-  color: currentColor;
+  color: #fff;
 }
-nav ul {
-  background-color: #000;
-  li {
-    color: #ffffff;
-  } 
+.mainNav {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  display: block;
 }

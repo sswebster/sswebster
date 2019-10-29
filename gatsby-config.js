@@ -30,6 +30,12 @@ module.exports = {
     {
       resolve: 'gatsby-source-contentful',
       options: contentfulConfig,
+    },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        families: ['Cabin']
+      }
     }
   ],
 }
