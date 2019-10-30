@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Hero from '../components/hero'
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
+import RecentWork from '../components/RecentWork'
 
 
 class RootIndex extends React.Component {
@@ -19,21 +20,11 @@ class RootIndex extends React.Component {
         <div style={{ background: '#fff' }}>
           <Helmet title={siteTitle} />
           <Hero data={author.node} />
-          <div className="wrapper">
-            <h2 className="section-headline">Recent work</h2>
-            <ul className="article-list">
-                {projects.map(({ node }) => {
-                return (
-                    <li key={node.slug}>
-                    <h2><a href={`/projects/${node.slug}`}>{node.slug}</a></h2>
-                    </li>
-                )
-                })}
-            </ul>
-          </div>
+          <h2 className="recentWork">Recent Projects</h2>
+          <RecentWork data={projects} />
         </div>
       </Layout>
-    )
+    )    
   }
 }
 
@@ -73,6 +64,24 @@ export const pageQuery = graphql`
           node {
               projectName
               slug
+              projectImage {
+                fixed(
+                  width: 300
+                  height: 300
+                  
+                ) {
+                  ...GatsbyContentfulFixed_tracedSVG
+                }
+              }
+              projectLogo {
+                fixed(
+                  width: 300
+                  height: 300
+                  
+                ) {
+                  ...GatsbyContentfulFixed_tracedSVG
+                }
+              }
             
           }
       }
