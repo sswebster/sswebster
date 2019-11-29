@@ -7,6 +7,7 @@ import Hero from '../components/hero'
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
 import RecentWork from '../components/RecentWork'
+import styles from '../components/base.css'
 
 
 class RootIndex extends React.Component {
@@ -20,7 +21,7 @@ class RootIndex extends React.Component {
         <div style={{ background: '#fff' }}>
           <Helmet title={siteTitle} />
           <Hero data={author.node} />
-          <h2 className="recentWork">Recent Projects</h2>
+          <h2 className="recentWorkHeader">Recent Projects</h2>
           <RecentWork data={projects} />
         </div>
       </Layout>
@@ -66,8 +67,8 @@ export const pageQuery = graphql`
               slug
               projectImage {
                 fixed(
-                  width: 300
-                  height: 300
+                  width: 150
+                  height: 150
                   
                 ) {
                   ...GatsbyContentfulFixed_tracedSVG
@@ -75,8 +76,8 @@ export const pageQuery = graphql`
               }
               projectLogo {
                 fixed(
-                  width: 300
-                  height: 300
+                  width: 225
+                  height: 225
                   
                 ) {
                   ...GatsbyContentfulFixed_tracedSVG
@@ -88,4 +89,4 @@ export const pageQuery = graphql`
     }
   }
   
-`
+` 

@@ -38,15 +38,11 @@ a {
 }
 
 /**
- * article grid
+ * Recent work
  */
-.article-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 5vmin;
+.recentWorkHeader {
+  text-align: center;
+  margin: 0 0 30px 0;
 }
 
 /**
