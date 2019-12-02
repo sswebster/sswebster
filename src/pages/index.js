@@ -75,12 +75,11 @@ export const pageQuery = graphql`
                 }
               }
               projectLogo {
-                fixed(
-                  width: 225
-                  height: 225
-                  
+                fluid(
+                  maxWidth: 225
+                  maxHeight: 225                  
                 ) {
-                  ...GatsbyContentfulFixed_tracedSVG
+                  ...GatsbyContentfulFluid_tracedSVG
                 }
               }
             

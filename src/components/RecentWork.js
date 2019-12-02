@@ -10,7 +10,7 @@ export default ({ data }) => (
       {data.map(({node}) => {
                 return (
                   <Col lg="4" md="4" className={styles.img}>
-                      <Img className={styles.projectLogo} fixed={node.projectLogo.fixed} />
+                      <Img className={styles.projectLogo} fluid={node.projectLogo.fluid} />
                   </Col>
                 )
               })}
