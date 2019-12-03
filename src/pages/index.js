@@ -8,6 +8,10 @@ import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
 import RecentWork from '../components/RecentWork'
 import styles from '../components/base.css'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faCaretRight } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faCaretRight)
 
 
 class RootIndex extends React.Component {
@@ -65,6 +69,12 @@ export const pageQuery = graphql`
           node {
               projectName
               slug
+              technologies
+              projectExcerpt {
+                childMarkdownRemark {
+                  rawMarkdownBody
+                }
+              }
               projectImage {
                 fixed(
                   width: 150
